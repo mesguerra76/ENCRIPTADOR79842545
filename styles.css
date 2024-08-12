@@ -48,7 +48,7 @@ header.logo {
     width: 100%;
 }
 
-.izquierdo, .derecho {
+.encripladoizq, .desencripladoder {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,12 +56,12 @@ header.logo {
     box-sizing: border-box;
 }
 
-.izquierdo {
+.encripladoizq {
     width: 75%;
     background-color:var(--color-1);
 }
 
-.derecho {
+.desencripladoder {
     width: 25%;
     background-color:var(--color-6);
    
@@ -70,7 +70,7 @@ header.logo {
     
 }
 
-.izquierdo textarea {
+.encripladoizq textarea {
     flex: 1;
     margin-bottom: 20px;
     resize: none; 
@@ -81,13 +81,13 @@ header.logo {
     font-family: var(--fuente-primaria);
     
 }
-.izquierdo textarea, .derecho textarea {
+.encripladoizq textarea, .desencripladoder textarea {
 border:none;
 outline:none;
 }
 
 
-.derecho textarea {
+.desencripladoder textarea {
     flex: 1;
     margin-bottom: 20px;
     resize: none; 
@@ -210,7 +210,7 @@ footer {
         align-items: center; 
     }
 
-    .izquierdo, .derecho {
+    .encripladoizq, .desencripladoder {
         width: 100%;
     }
 header{
@@ -247,7 +247,7 @@ header{
         width: auto;
         margin-top: 10px;
     }
-    .izquierdo, .derecho {
+    .encripladoizq, .desencripladoder {
         width: 100%; 
     }
 
