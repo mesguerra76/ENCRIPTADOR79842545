@@ -11,7 +11,7 @@ function encriptar() {
     mensaje.value = "Solo se permiten letras minúsculas sin acentos, ni números.";
     tituloMensaje.textContent = "Ningún mensaje fue encontrado";
     muñeco.src = "./img/ATTENTION.jpg";
-    return;  // Salir de la función para no continuar con el cifrado
+    //return;  // Salir de la función para no continuar con el cifrado
 }
     let textoCifrado = texto
       .replace(/e/gi, "enter")

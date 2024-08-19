@@ -250,19 +250,14 @@ header{
     .encripladoizq, .desencripladoder {
         width: 100%; 
     }
-
     .botones,.botones-2 {
         flex-direction: column;
         align-items: center;
-        
     }
-
     button{
         width: 100%;
         height: 40%;
     }
-
-
     .btn-copiar {
         margin-top: 10px;
     }
