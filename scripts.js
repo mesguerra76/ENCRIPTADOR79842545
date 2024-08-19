@@ -8,7 +8,7 @@ function encriptar() {
 
   if (!regex.test(texto)) {
     // Si la validación falla, mostrar el mensaje de advertencia en el textarea
-    mensaje.value = "Solo se permiten letras minúsculas sin acentos, ni números.";
+    mensaje.value = "Solo se permiten letras minúsculas sin acentos.";
     tituloMensaje.textContent = "Ningún mensaje fue encontrado";
     muñeco.src = "./img/ATTENTION.jpg";
     //return;  // Salir de la función para no continuar con el cifrado
