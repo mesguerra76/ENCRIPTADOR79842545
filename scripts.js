@@ -1,40 +1,46 @@
 function encriptar() {
-    let texto = document.getElementById("texto").value;
-    let tituloMensaje = document.getElementById("titulo-mensaje");
-    let parrafo = document.getElementById("parrafo");
-    let muñeco = document.getElementById("muñeco");
-  // Validar que el texto solo contenga letras minúsculas y no tenga números ni acentos
+  let texto = document.getElementById("texto").value;
+  let tituloMensaje = document.getElementById("titulo-mensaje");
+  let muñeco = document.getElementById("muñeco");
+  let mensaje = document.getElementById("mensaje");
+
+  // Expresión regular para validar solo letras minúsculas y espacios
   let regex = /^[a-z\s]+$/;
 
+  // Validar que el texto solo contenga letras minúsculas y no tenga números ni acentos
   if (!regex.test(texto)) {
-    // Si la validación falla, mostrar el mensaje de advertencia en el textarea
-    mensaje.value = "Solo se permiten letras minúsculas sin acentos.";
-    tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-    muñeco.src = "./img/ATTENTION.jpg";
-    //return;  // Salir de la función para no continuar con el cifrado
-}
-    let textoCifrado = texto
-      .replace(/e/gi, "enter")
-      .replace(/i/gi, "imes")
-      .replace(/a/gi, "ai")
-      .replace(/o/gi, "ober")
-      .replace(/u/gi, "ufat");
-  
-    if (texto.length != 0) {
-      document.getElementById("mensaje").value = textoCifrado;
-      tituloMensaje.textContent = "Texto encriptado con éxito";
-      muñeco.src ="./img/encriptado.jpg";
-    } else {
-      muñeco.src = "./img/muñeco.png";
+      // Si la validación falla, mostrar el mensaje de advertencia en el textarea
+      mensaje.value = "Solo se permiten letras minúsculas sin acentos,no números.";
       tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-    }
+      muñeco.src = "./img/ATTENTION.jpg";
+      return;  // Salir de la función para no continuar con el cifrado
   }
-  
+
+  // Proceso de cifrado
+  let textoCifrado = texto
+    .replace(/e/g, "enter")
+    .replace(/i/g, "imes")
+    .replace(/a/g, "ai")
+    .replace(/o/g, "ober")
+    .replace(/u/g, "ufat");
+
+  // Si el texto es válido y no está vacío, mostrar el texto cifrado
+  if (texto.length != 0) {
+      mensaje.value = textoCifrado;
+      tituloMensaje.textContent = "Texto encriptado con éxito";
+      muñeco.src = "./img/encriptado.jpg";
+  } else {
+      mensaje.value = "Ningún mensaje fue encontrado.";
+      tituloMensaje.textContent = "Ningún mensaje fue encontrado";
+      muñeco.src = "./img/muñeco.png";
+  }
+}
+
+
   function desencriptar() {
     let texto = document.getElementById("texto").value;
     let tituloMensaje = document.getElementById("titulo-mensaje");
-    
-    let muñeco = document.getElementById("muñeco");
+        let muñeco = document.getElementById("muñeco");
   
     let textoCifrado = texto
       .replace(/enter/gi, "e")
