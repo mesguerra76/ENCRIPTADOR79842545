@@ -3,7 +3,16 @@ function encriptar() {
     let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
     let muñeco = document.getElementById("muñeco");
-  
+  // Validar que el texto solo contenga letras minúsculas y no tenga números ni acentos
+  let regex = /^[a-z\s]+$/;
+
+  if (!regex.test(texto)) {
+    // Si la validación falla, mostrar el mensaje de advertencia en el textarea
+    mensaje.value = "Solo se permiten letras minúsculas sin acentos, ni números.";
+    tituloMensaje.textContent = "Ningún mensaje fue encontrado";
+    muñeco.src = "./img/ATTENTION.jpg";
+    return;  // Salir de la función para no continuar con el cifrado
+}
     let textoCifrado = texto
       .replace(/e/gi, "enter")
       .replace(/i/gi, "imes")
@@ -18,7 +27,6 @@ function encriptar() {
     } else {
       muñeco.src = "./img/muñeco.png";
       tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-      swal("Ooops!", "Debes ingresar un texto", "warning");
     }
   }
   
@@ -52,7 +60,6 @@ function encriptar() {
     let muñeco = document.getElementById("muñeco");
     muñeco.src = "./img/muñeco.png";
     tituloMensaje.textContent = "Ningún mensaje fue encontrado";
-    
   }
   
   function copiar() {
